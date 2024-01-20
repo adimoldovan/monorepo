@@ -13,7 +13,7 @@ jobs:
 
     - name: Push to GitLab
       run: |
-        git remote add gitlab https://git:${GITLAB_TOKEN}@${GITLAB_REPO_URL#https://}
+        git remote add gitlab https://git:${GITLAB_TOKEN}@${GITLAB_REPO_URL}
         git push -f --all gitlab
       env:
         GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL }}
