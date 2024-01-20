@@ -11,8 +11,7 @@ jobs:
 
     - name: Push to GitLab
       run: |
-        git remote add gitlab ${GITLAB_REPO_URL}
-        git config --local http.${GITLAB_REPO_URL}/.extraheader "AUTHORIZATION: basic $(printf "x-access-token:%s" "$GITLAB_TOKEN" | base64)"
+        git remote add gitlab https://${GITLAB_USERNAME}:${GITLAB_TOKEN}@${GITLAB_REPO_URL#https://}
         git push -f --all gitlab
       env:
         GITLAB_REPO_URL: ${{ secrets.GITLAB_REPO_URL }}
