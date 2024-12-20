@@ -1,2 +1,2 @@
 # The monorepo
-A monorepo.
+A monorepo
